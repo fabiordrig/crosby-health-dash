@@ -2,10 +2,11 @@
 
 import { MailOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
-import { Layout, Menu, theme } from "antd";
+import { Badge, Layout, Menu, Typography, theme } from "antd";
 import Image from "next/image";
 import React from "react";
 import CrosbyLogo from "./CrosbyIcon.svg";
+import CrosbyTableFilter from "./CrosbyTableFilter";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -16,15 +17,15 @@ const items: MenuProps["items"] = [
     icon: <MailOutlined />,
     children: [
       {
-        key: "1.1",
+        key: "2",
         label: "CrosbyCDI",
       },
       {
-        key: "1.2",
+        key: "3",
         label: "Appeals",
       },
       {
-        key: "1.3",
+        key: "4",
         label: "Summited Appeals",
       },
     ],
@@ -62,10 +63,25 @@ const App: React.FC = () => {
         >
           <Image src={CrosbyLogo} alt="Crosby Logo" width={50} height={50} />
         </div>
-        <Menu mode="inline" defaultSelectedKeys={["4"]} inlineCollapsed items={items} />
+        <Menu
+          mode="inline"
+          defaultSelectedKeys={["3"]}
+          defaultOpenKeys={["1"]}
+          inlineCollapsed
+          items={items}
+        />
       </Sider>
-      <Layout style={{ marginLeft: 200, height: "100vh" }}>
-        <Header style={{ padding: 0, background: colorBgContainer }}>Appeals</Header>
+      <Layout theme="light" style={{ marginLeft: 200, height: "100vh" }}>
+        <div style={{ marginTop: 20 }}>
+          <Badge size="default" count={11}>
+            <div style={{ marginLeft: 20, marginTop: 20 }}>
+              <Typography.Title level={2}>Appeals</Typography.Title>
+            </div>
+          </Badge>
+        </div>
+
+        <CrosbyTableFilter />
+
         <Content style={{ margin: "24px 16px 0", overflow: "initial" }}>
           <div
             style={{
