@@ -6,6 +6,7 @@ import { Badge, Layout, Menu, Typography, theme } from "antd";
 import Image from "next/image";
 import React from "react";
 import CrosbyLogo from "./CrosbyIcon.svg";
+import CrosbyTable from "./CrosbyTable";
 import CrosbyTableFilter from "./CrosbyTableFilter";
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -91,13 +92,7 @@ const App: React.FC = () => {
               borderRadius: borderRadiusLG,
             }}
           >
-            <p>long content</p>
-            {Array.from({ length: 2 }, (_, index) => (
-              <React.Fragment key={index}>
-                {index % 20 === 0 && index ? "more" : "..."}
-                <br />
-              </React.Fragment>
-            ))}
+            <CrosbyTable />
           </div>
         </Content>
         <Footer style={{ textAlign: "center" }}>

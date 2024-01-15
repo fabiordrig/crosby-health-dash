@@ -9,9 +9,9 @@ const CrosbyTableFilter: FC = () => {
     <Card style={{ margin: "24px 16px 0" }}>
       <Form form={form} requiredMark={false} style={{ marginTop: 10 }} layout="vertical">
         <Row gutter={16}>
-          <Col span={6}>
+          <Col span={13}>
             <Form.Item name="name">
-              <Input addonBefore={<SearchOutlined />} size="large" placeholder="Teste" />
+              <Input addonBefore={<SearchOutlined />} size="large" placeholder="Search Patient" />
             </Form.Item>
           </Col>
         </Row>
