@@ -6,13 +6,11 @@ const columns: TableColumnsType<Appeal> = [
   {
     title: "Patient ID",
     dataIndex: "id",
-    width: 100,
     sorter: (a: Appeal, b: Appeal) => a.id.localeCompare(b.id),
   },
   {
     title: "Patient Name",
     dataIndex: "name",
-    width: 150,
     sorter: (a: Appeal, b: Appeal) => a.name.localeCompare(b.name),
   },
   {

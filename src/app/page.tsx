@@ -12,12 +12,12 @@ import {
 import type { MenuProps } from "antd";
 import { Avatar, Badge, Button, Card, Layout, Menu, Space, Tag, Typography, theme } from "antd";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 import CrosbyLogo from "./CrosbyIcon.svg";
 import CrosbyTable from "./CrosbyTable";
 import CrosbyTableFilter from "./CrosbyTableFilter";
 import { Appeal } from "./types";
-
 const { Content, Footer, Sider } = Layout;
 
 const items: MenuProps["items"] = [
@@ -138,6 +138,12 @@ const App: React.FC = () => {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
 
+  const router = useRouter();
+
+  const handleCreateAppealClick = () => {
+    router.push("/new");
+  };
+
   return (
     <Layout hasSider>
       <Sider
@@ -146,7 +152,6 @@ const App: React.FC = () => {
           overflow: "auto",
           minHeight: "100vh",
           position: "fixed",
-          width: 700,
         }}
       >
         <div
@@ -192,7 +197,6 @@ const App: React.FC = () => {
           </Tag>
 
           <Card
-            size="small"
             style={{
               width: "100%",
             }}
@@ -224,12 +228,12 @@ const App: React.FC = () => {
             marginRight: 20,
           }}
         >
-          <Badge size="default" count={11}>
+          <Badge size="default" count={11} offset={[4, 17]}>
             <div style={{ marginLeft: 20, marginTop: 20 }}>
               <Typography.Title level={2}>Appeals</Typography.Title>
             </div>
           </Badge>
-          <Button size="large" type="primary">
+          <Button size="large" type="primary" onClick={handleCreateAppealClick}>
             Create Appeal
           </Button>
         </div>
