@@ -208,13 +208,13 @@ const App: React.FC = () => {
             style={{
               marginTop: 24,
             }}
-            type="ghost"
+            type="text"
           >
             Logout
           </Button>
         </Space>
       </Sider>
-      <Layout theme="light" style={{ marginLeft: 200, minHeight: "100vh" }}>
+      <Layout style={{ marginLeft: 200, minHeight: "100vh" }}>
         <div
           style={{
             display: "flex",

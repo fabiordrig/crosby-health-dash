@@ -1,8 +1,8 @@
-import { Table, Tag } from "antd";
+import { Table, TableColumnsType, Tag } from "antd";
 import { FC } from "react";
 import { Appeal } from "./types";
 
-const columns = [
+const columns: TableColumnsType<Appeal> = [
   {
     title: "Patient ID",
     dataIndex: "id",

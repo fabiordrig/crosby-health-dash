@@ -29,12 +29,12 @@ const CrosbyTableFilter: FC = () => {
             </Form.Item>
           </Col>
           <Col span={6}>
-            <Form.Item label="Clinic Location" name="name">
+            <Form.Item label="Clinic Location" name="clinicLocation">
               <Input size="large" placeholder="Search by clinic location" />
             </Form.Item>
           </Col>
           <Col span={6}>
-            <Form.Item label="Insurance Company" name="name">
+            <Form.Item label="Insurance Company" name="insuranceCompany">
               <Input size="large" placeholder="Search by insurance company" />
             </Form.Item>
           </Col>
@@ -43,7 +43,7 @@ const CrosbyTableFilter: FC = () => {
               <Button htmlType="submit" type="primary" size="large">
                 Search
               </Button>
-              <Button htmlType="reset" size="large" type="text">
+              <Button htmlType="reset" size="large" type="text" onClick={() => form.resetFields()}>
                 Reset
               </Button>
             </Space>
